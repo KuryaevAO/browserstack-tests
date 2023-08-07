@@ -36,15 +36,15 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
         // Set your access credentials
-        desiredCapabilities.setCapability("browserstack.user", user);
-        desiredCapabilities.setCapability("browserstack.key", key);
+        desiredCapabilities.setCapability("browserstack.user", "bsuser_1OJ9N2");
+        desiredCapabilities.setCapability("browserstack.key", "cisFaQZhozvkbyLtEswe");
 
         // Set URL of the application under test
         desiredCapabilities.setCapability("app", app);
 
         // Specify device and os_version for testing
-        desiredCapabilities.setCapability("device", device);
-        desiredCapabilities.setCapability("os_version", os_version);
+        desiredCapabilities.setCapability("device", "Samsung Galaxy S22 Ultra");
+        desiredCapabilities.setCapability("os_version", "12.0");
 
         // Set other BrowserStack capabilities
         desiredCapabilities.setCapability("project", build);
