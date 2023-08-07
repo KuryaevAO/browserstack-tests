@@ -43,7 +43,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("app", app);
 
         // Specify device and os_version for testing
-        desiredCapabilities.setCapability("device", "Samsung Galaxy S22");
+        desiredCapabilities.setCapability("device", "Samsung Galaxy S22+");
         desiredCapabilities.setCapability("os_version", "12.0");
 
         // Set other BrowserStack capabilities
