@@ -32,16 +32,6 @@ public class Attach {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
                 + Browserstack.videoUrl(sessionId)
                 + "' type='video/mp4'></video></body></html>";
-    }
 
-    public static String getSessionId() {
-        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
-    }
-
-    public static void browserConsoleLogs() {
-        attachAsText(
-                "Browser console logs",
-                String.join("\n", Selenide.getWebDriverLogs(BROWSER))
-        );
     }
 }
