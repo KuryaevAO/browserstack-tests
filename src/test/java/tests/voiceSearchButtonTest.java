@@ -1,6 +1,7 @@
 package tests;
 
 import io.appium.java_client.MobileBy;
+import io.qameta.allure.AllureId;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +13,7 @@ public class voiceSearchButtonTest extends TestBase {
 
     @Test
     @DisplayName("Voice search working")
+    @AllureId("25135")
     void voiceSearchButtonTest() {
         step("Press Voice Search button", () -> {
             $(MobileBy.id("org.wikipedia.alpha:id/voice_search_button")).click();
