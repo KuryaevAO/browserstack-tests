@@ -1,9 +1,5 @@
-# allure-guthub-issue-tests
+# browserstack-tests
 
-link to the testing subject - https://github.com/
+link to the testing subject - http://hub.browserstack.com/wd/hub
 
-FindIssueTest - тест на проверку Issue на Selenide
-
-LambdaStepsFindIssueTest - тест на проверку Issue на Selenide с лямбда шагами
-
-AnnotatedStepsFindIssueTest - тест на проверку Issue на Selenide с шагами с аннотацией
+voiceSearchButtonTest - тест на проверку работы кнопки голосового поиска
