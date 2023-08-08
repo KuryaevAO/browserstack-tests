@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
+import static helpers.Attach.getSessionId;
 
 public class TestBase {
     @BeforeAll
@@ -28,10 +29,14 @@ public class TestBase {
 
     @AfterEach
     public void afterEach() {
+        String sessionId = getSessionId();
 
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
 
         closeWebDriver();
+
+        Attach.attachVideo(sessionId);
+
     }
 }
