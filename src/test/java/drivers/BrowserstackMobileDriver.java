@@ -7,6 +7,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -15,9 +16,9 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     CredentialsConfig credentials =
             ConfigFactory.create(CredentialsConfig.class);
 
-    public URL getBrowserstackUrl() {
+    public static URL getBrowserstackUrl() {
         try {
-            return new URL(credentials.baseUrl());
+            return new URL("http://hub.browserstack.com/wd/hub");
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
