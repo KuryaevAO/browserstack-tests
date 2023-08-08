@@ -33,13 +33,14 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("app", config.app());
 
         // Specify device and os_version for testing
-        desiredCapabilities.setCapability("device", config.device());
-        desiredCapabilities.setCapability("os_version", config.os_version());
+        //desiredCapabilities.setCapability("device", config.device());
+        desiredCapabilities.setCapability("device", "Samsung Galaxy S22");
+        desiredCapabilities.setCapability("os_version", "12.0");
 
         // Set other BrowserStack capabilities
-        desiredCapabilities.setCapability("project", config.project());
-        desiredCapabilities.setCapability("build", config.build());
-        desiredCapabilities.setCapability("name", config.name());
+        desiredCapabilities.setCapability("project", "First Java Project");
+        desiredCapabilities.setCapability("build", "Java Android");
+        desiredCapabilities.setCapability("name", "first_test");
 
         return new AndroidDriver(getBrowserstackUrl(), desiredCapabilities);
     }
