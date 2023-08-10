@@ -13,21 +13,6 @@ public interface CredentialsConfig extends Config {
     @Key("app")
     String app();
 
-    @Key("device")
-    String device();
-
-    @Key("os_version")
-    String os_version();
-
-    @Key("project")
-    String project();
-
-    @Key("build")
-    String build();
-
-    @Key("name")
-    String name();
-
     @Key("baseUrl")
     String baseUrl();
 }

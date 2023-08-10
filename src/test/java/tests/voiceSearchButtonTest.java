@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.back;
 import static io.qameta.allure.Allure.step;
 
 public class voiceSearchButtonTest extends TestBase {
@@ -17,6 +18,9 @@ public class voiceSearchButtonTest extends TestBase {
     @AllureId("25135")
     @Feature("Mobile Tests")
     void voiceSearchButtonTest() {
+
+        back();
+
         step("Press Voice Search button", () -> {
             $(MobileBy.id("org.wikipedia.alpha:id/voice_search_button")).click();
         });
