@@ -2,8 +2,8 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({"classpath:com/kuryaevao/config/credentials.properties"})
-public interface CredentialsConfig extends Config {
+@Config.Sources({"classpath:com/kuryaevao/config/browserstack.properties"})
+public interface BrowserstackConfig extends Config {
     @Key("user")
     String user();
 

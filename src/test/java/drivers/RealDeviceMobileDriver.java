@@ -1,7 +1,9 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+import config.RealDeviceConfig;
 import io.appium.java_client.android.AndroidDriver;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -13,10 +15,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class RealDeviceMobileDriver implements WebDriverProvider {
 
+    static final RealDeviceConfig readDeviceConfig =
+            ConfigFactory.create(RealDeviceConfig.class, System.getProperties());
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL("http://127.0.0.1:4723/wd/hub");
+            return new URL(readDeviceConfig.baseUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -25,9 +29,9 @@ public class RealDeviceMobileDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
-        desiredCapabilities.setCapability("platformName", "Android");
-        desiredCapabilities.setCapability("deviceName", "XWIFF66L6959IBLZ");
-        desiredCapabilities.setCapability("version", "13.0");
+        desiredCapabilities.setCapability("platformName", readDeviceConfig.platformName());
+        desiredCapabilities.setCapability("deviceName", readDeviceConfig.deviceName());
+        desiredCapabilities.setCapability("version", readDeviceConfig.version());
         desiredCapabilities.setCapability("locale", "en");
         desiredCapabilities.setCapability("language", "en");
         desiredCapabilities.setCapability("appPackage", "org.wikipedia.alpha");

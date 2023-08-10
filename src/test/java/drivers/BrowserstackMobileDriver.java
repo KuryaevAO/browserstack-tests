@@ -1,7 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.CredentialsConfig;
+import config.BrowserstackConfig;
 import io.appium.java_client.android.AndroidDriver;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
@@ -12,8 +12,8 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    final CredentialsConfig config =
-            ConfigFactory.create(CredentialsConfig.class, System.getProperties());
+    final BrowserstackConfig config =
+            ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
     public URL getBrowserstackUrl() {
         try {
@@ -33,7 +33,6 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("app", config.app());
 
         // Specify device and os_version for testing
-        //desiredCapabilities.setCapability("device", config.device());
         desiredCapabilities.setCapability("device", "Samsung Galaxy S22");
         desiredCapabilities.setCapability("os_version", "12.0");
 
